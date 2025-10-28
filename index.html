@@ -25,13 +25,30 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
 
-        /* --- СТИЛЬ ДЛЯ ВЫБРАННОЙ КНОПКИ --- */
+        /* --- СТИЛИ ДЛЯ КНОПКИ COINS --- */
+        
+        /* 1. Моментальная реакция на нажатие (удержание) */
+        #main-coin-option-button:active {
+            transform: scale(0.98); /* Слегка уменьшаем */
+            background-color: #fee2e2; /* red-100 */
+            border-color: #ef4444; /* red-500 */
+            transition: transform 0.05s ease-out;
+        }
+        
+        /* 2. Состояние "Выбрано" (после клика) */
         #main-coin-option-button.is-selected {
             background-color: #fee2e2; /* red-100 */
             border-color: #ef4444; /* red-500 */
             transform: scale(1.02); /* Слегка увеличиваем */
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
         }
+        
+        /* 3. Эффект нажатия, когда кнопка УЖЕ выбрана */
+        #main-coin-option-button.is-selected:active {
+            transform: scale(1.0); /* Возвращаем к 1.0, чтобы выглядело как нажатие */
+            background-color: #fecaca; /* red-200 (чуть темнее) */
+        }
+
 
         /* --- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА --- */
         
